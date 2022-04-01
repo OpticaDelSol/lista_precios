@@ -36,7 +36,7 @@ $this->load->view('layouts/sidebar');
   
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <?php $this->load->view('layouts/demo'); ?>
+    <?php $this->load->view($view); ?>
   </div>
   <!-- /.content-wrapper -->
 
