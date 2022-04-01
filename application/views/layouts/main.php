@@ -54,17 +54,17 @@ $this->load->view('layouts/sidebar');
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="<?php echo site_url('plugins/jquery/jquery.min.js'); ?>"></script>
+<script src="<?php echo site_url('resources/plugins/jquery/jquery.min.js'); ?>"></script>
 <!-- Bootstrap -->
-<script src="<?php echo site_url('plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+<script src="<?php echo site_url('resources/plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
 <!-- AdminLTE -->
-<script src="<?php echo site_url('dist/js/adminlte.js'); ?>"></script>
+<script src="<?php echo site_url('resources/js/adminlte.js'); ?>"></script>
 
 <!-- OPTIONAL SCRIPTS -->
-<script src="<?php echo site_url('plugins/chart.js/Chart.min.js'); ?>"></script>
+<script src="<?php echo site_url('resources/plugins/chart.js/Chart.min.js'); ?>"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo site_url('dist/js/demo.js'); ?>"></script>
+<script src="<?php echo site_url('resources/js/demo.js'); ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo site_url('dist/js/pages/dashboard3.js'); ?>"></script>
+<script src="<?php echo site_url('resources/js/pages/dashboard3.js'); ?>"></script>
 </body>
 </html>
