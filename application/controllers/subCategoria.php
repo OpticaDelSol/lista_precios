@@ -5,18 +5,24 @@ class SubCategoria extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('SubCategoria_model');
+        $this->load->model('categoria_model');
     } 
 
     function add()
     {
         $data["view"]="subcategoria/add";
+        $data["categorias"]=$this->categoria_model->list();
 
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','nombre','required');
         if($this->form_validation->run())     
         {   
-            $params = array();
+            $params = array(
+                'nombre'=>$this->input->post('nombre'),
+                'descripcion'=>$this->input->post('descripcion'),
+                'categoria_idcategoria'=>$this->input->post('categoria'),
+            );
             $this->SubCategoria_model->add($params);
             redirect('/');
         }

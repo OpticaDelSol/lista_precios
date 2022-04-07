@@ -23,7 +23,13 @@ class SubCategoria_model extends CI_Model
     }
     function list()
     {
-        return $this->db->query("")->result_array();
+        $this->db->order_by('nombre', 'asc');
+        return $this->db->get('subcategoria')->result_array();
+    }
+    function list_for_category($id)
+    {
+        $this->db->where('categoria_idcategoria', $id);
+        return $this->db->get('subcategoria')->result_array();
     }
 
 }

@@ -22,7 +22,8 @@ class Categoria_model extends CI_Model
     }
     function list()
     {
-        return $this->db->query("")->result_array();
+        $this->db->order_by('nombre', 'asc');
+        return $this->db->get('categoria')->result_array();
     }
 
 }

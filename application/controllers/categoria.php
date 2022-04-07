@@ -16,7 +16,10 @@ class Categoria extends CI_Controller{
         $this->form_validation->set_rules('nombre','nombre','required');
         if($this->form_validation->run())     
         {   
-            $params = array();
+            $params = array(
+                'nombre'=>$this->input->post('nombre'),
+                'descripcion'=>$this->input->post('descripcion'),
+            );
             $this->Categoria_model->add($params);
             redirect('/');
         }

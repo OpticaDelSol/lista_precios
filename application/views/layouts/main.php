@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo site_url('resources/css/adminlte.min.css');?>">
+
+  <link href="<?php echo site_url('resources/css/summernote-bs5.min.css');?>" rel="stylesheet">
 </head>
 <!--
 `body` tag options:
@@ -66,5 +68,23 @@ $this->load->view('layouts/sidebar');
 <script src="<?php echo site_url('resources/js/demo.js'); ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php echo site_url('resources/js/pages/dashboard3.js'); ?>"></script>
+
+<script src="<?php echo site_url('resources/js/summernote-bs5.min.js'); ?>"></script>
+<?php
+if ( isset($js_to_load)){ 
+  if(is_array($js_to_load)) {
+      foreach($js_to_load as $js){ 
+          ?>
+
+          <script src="<?php echo site_url('resources/js/'.$js);?>"> </script>
+
+  <?php } } else {?> 
+
+      <script src="<?php echo site_url('resources/js/'.$js_to_load);?>"> </script>
+
+<?php 
+}
+}
+?>
 </body>
 </html>
