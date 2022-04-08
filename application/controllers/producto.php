@@ -40,6 +40,12 @@ class Producto extends CI_Controller{
         $this->load->view("producto/_subcategoria_select",$data);
     }
 
+    function obtener_detalles_producto($idproducto)
+    {
+        $data["detalle"]=$this->Producto_model->get_detalle_producto($idproducto);
+        $this->load->view("producto/_product_details_modal",$data);
+    }
+
     function edit()
     {
         $data["view"]="producto/edit";

@@ -1,15 +1,18 @@
-<?php 
-        $categories=[
-            ['nombre'=>'categoria1', 'id'=>'1', 'selected'=>true],
-            ['nombre'=>'categoria2', 'id'=>'2', 'selected'=>false],
-            ['nombre'=>'categoria3', 'id'=>'3', 'selected'=>false],
-            ['nombre'=>'categoria4', 'id'=>'4', 'selected'=>false],
-            ['nombre'=>'categoria5', 'id'=>'5', 'selected'=>false],
-            ['nombre'=>'categoria6', 'id'=>'6', 'selected'=>false],
-            ['nombre'=>'categoria7', 'id'=>'7', 'selected'=>false],
-        ];
+<style>
+  .loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
 
-?>
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
 <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -31,21 +34,23 @@
       <div class='row'>
       
     <div class="col-7 col-sm-9">
+
       <div class="tab-content" id="vert-tabs-right-tabContent">
-        <?php foreach($categories as $cat){?>
-            <div class="tab-pane fade <?php echo ($cat['selected']? 'active show' : ''); ?>" id="vert-tabs-right-<?php echo $cat['id'] ?>" role="tabpanel" aria-labelledby="vert-tabs-right-<?php echo $cat['id'] ?>-tab">
-            <?php echo $cat['nombre']; ?>
-            </div>
-        <?php } ?>
+        <?php $this->load->view("producto/listado_por_categoria",['productos'=>$productos,'cur_cat_id'=>$cur_cat_id]); ?>
       </div>
+
     </div>
     <div class="col-5 col-sm-3">
         <div class="nav flex-column nav-tabs nav-tabs-right h-100" id="vert-tabs-right-tab" role="tablist" aria-orientation="vertical">
-        <?php foreach($categories as $cat){?>
-            <a class="nav-link  <?php echo ($cat['selected']? 'active' : '');?>" id="vert-tabs-right-<?php echo $cat['id'] ?>-tab" data-toggle="pill" href="#vert-tabs-right-<?php echo $cat['id'] ?>" role="tab" aria-controls="vert-tabs-right-<?php echo $cat['id'] ?>" aria-selected="<?php echo ($cat['selected']? 'true':'false') ?>"><?php echo $cat['nombre'] ?></a>
+        <?php foreach($categorias as $cat){?>
+            <a class="nav-link  <?php echo ($cat['idcategoria'] == $cur_cat_id? 'active' : '');?>" id="vert-tabs-right-<?php echo $cat['idcategoria'] ?>-tab" data-toggle="pill" href="#vert-tabs-right-<?php echo $cat['idcategoria'] ?>" role="tab" aria-controls="vert-tabs-right-<?php echo $cat['idcategoria'] ?>" aria-selected="<?php echo ($cat['idcategoria'] == $cur_cat_id? 'true':'false') ?>"><?php echo $cat['nombre'] ?></a>
         <?php } ?>
         </div>
     </div>
       </div>
   </div>
 </section>
+<?php $this->load->view("common/big_modal"); ?>
+<script>
+  var detalle_producto_url = "<?php echo site_url("producto/obtener_detalles_producto/") ?>";
+</script>
