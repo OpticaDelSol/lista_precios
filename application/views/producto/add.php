@@ -7,6 +7,13 @@
                         <h3 class="card-title">Nuevo Producto</h3>
                     </div>
                     <div class="card-body">
+                    <?php if(isset($error)){?>
+                        <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h5><i class="icon fas fa-ban"></i> Error</h5>
+                       <?php echo $error; ?>
+                        </div>
+                    <?php }?>
                     <?php echo form_open('producto/add/'); ?>
                         <div class="form-group">
                             <label for="codigo-producto">C&oacute;digo</label>
@@ -43,7 +50,7 @@
                         </div>
                         <?php  echo form_close();  ?>
                         <div class="form-group">
-                            <a href="" class="btn btn-danger">Cancelar</a>
+                            <a href="<?php echo site_url("producto/list"); ?>" class="btn btn-danger">Cancelar</a>
                         </div>
                     </div>
                     <div class="card-footer"></div>

@@ -16,6 +16,7 @@ class SubCategoria extends CI_Controller{
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','nombre','required');
+        $this->form_validation->set_rules('descripcion','descripcion','required');
         if($this->form_validation->run())     
         {   
             $params = array(
@@ -24,16 +25,38 @@ class SubCategoria extends CI_Controller{
                 'categoria_idcategoria'=>$this->input->post('categoria'),
             );
             $this->SubCategoria_model->add($params);
-            redirect('/');
+            redirect('subcategoria/list');
+        }else{
+            //$data["error"]="todos los campos son requeridos";
         }
 
         $this->load->view("layouts/main",$data);
     }
-    function edit()
+
+    function edit($idsubcategoria)
     {
-        $data["view"]="categoria/edit";
+        $data["view"]="subcategoria/edit";
+        $data["idsubcategoria"]=$idsubcategoria;
+        $data["subcategoria"] = $this->SubCategoria_model->get($idsubcategoria);
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('nombre','nombre','required');
+        $this->form_validation->set_rules('descripcion','descripcion','required');
+        if($this->form_validation->run())     
+        {   
+            $params = array(
+                'nombre'=>$this->input->post('nombre'),
+                'descripcion'=>$this->input->post('descripcion'),
+            );
+            $this->SubCategoria_model->edit($idsubcategoria, $params);
+            redirect('subcategoria/list');
+        }
+        else{
+            //$data["error"]="todos los campos son requeridos";
+        }
         $this->load->view("layouts/main",$data);
     }
+
     function remove()
     {
         $data["view"]="categoria/add";
@@ -41,7 +64,8 @@ class SubCategoria extends CI_Controller{
     }
     function list()
     {
-        $data["view"]="categoria/list";
+        $data["subcategorias"]=$this->SubCategoria_model->list_path();
+        $data["view"]="subcategoria/list";
         $this->load->view("layouts/main",$data);
     }
 

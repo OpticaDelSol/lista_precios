@@ -11,14 +11,18 @@ class Categoria_model extends CI_Model
         $this->db->insert('categoria',$params);
         return $this->db->insert_id();
     }
-    function update($id,$params)
+    function edit($id,$params)
     {
-        $this->db->where('id',$id);
+        $this->db->where('idcategoria',$id);
         return $this->db->update('categoria',$params);
     }
     function remove()
     {
 
+    }
+    function get($id)
+    {
+        return $this->db->query("select * from categoria c where c.idcategoria = $id;")->row_array();
     }
     function list()
     {

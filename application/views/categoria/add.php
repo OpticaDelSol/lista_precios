@@ -7,6 +7,13 @@
                     <h3 class="card-title">Agregar Cagegor&iacute;a</h3>
                 </div>
                 <div class="card-body">
+                    <?php if(isset($error)){?>
+                        <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h5><i class="icon fas fa-ban"></i> Error</h5>
+                       <?php echo $error; ?>
+                        </div>
+                    <?php }?>
                     <?php echo form_open('categoria/add/'); ?>
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
@@ -21,7 +28,7 @@
                     </div>
                     <?php  echo form_close();  ?>
                     <div class="form-group">
-                        <a href="" class="btn btn-danger">Cancelar</a>
+                        <a href="<?php echo site_url("categoria/list"); ?>" class="btn btn-danger">Cancelar</a>
                     </div>
 
                 </div>

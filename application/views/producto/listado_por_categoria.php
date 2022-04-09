@@ -35,7 +35,11 @@ foreach($productos as $p){
     <div class="card">
         <div class="card-header">
             <h3 class="card-title"><?php echo $p["nombre_subcategoria"] ?></h3>
+            <div class="card-tools">
+                
+            </div>
         </div>
+        
         <div class="card-body">
             <div class="col-md-12">
             <table class="table table-bordered">
@@ -49,11 +53,14 @@ foreach($productos as $p){
                 <tbody>
                     <?php } ?>
                     <tr >
-                    <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row"><?php echo $p["titulo"]  ?></td>
+                    <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row"><?php echo $p["titulo"]  ?> &nbsp;&nbsp;
+                    <span class="badge bg-danger">-55%</span>
+                    <span class="badge bg-success">Nuevo</span>
+                </td>
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">$&nbsp;<?php echo $p["precio"] ?></td>
                     <td>
-                        <a class="btn btn-sm btn-success producto-row" data-idprod="<?php echo $p["idproducto"] ?>" href="#"><i class="fa fa-info"></i></a>       
-                        <a class="btn btn-sm btn-warning" href="">Editar</a>       
+                        <a class="btn btn-xs btn-success producto-row" data-idprod="<?php echo $p["idproducto"] ?>" href="#"><i class="fa fa-info"></i></a>       
+                        <!--a class="btn btn-xs btn-warning" href="">Editar</a-->       
                     </td>
     </tr>
 

@@ -34,14 +34,49 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="./index.html" class="nav-link">
+            <a href="<?php echo site_url("dashboard/listado_cat"); ?>" class="nav-link">
               <i class="far fa-star nav-icon"></i>
               <p>Lista de Precios</p>
             </a>
           </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
+      
+        <div class="info">
+            <a href="#" class="d-block">Admin</a>
+        </div>
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="<?php echo site_url("categoria/list"); ?>" class="nav-link">
+                <i class="far fa-star nav-icon"></i>
+                <p>Categor&iacute;as</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="<?php echo site_url("subcategoria/list"); ?>" class="nav-link">
+                <i class="far fa-star nav-icon"></i>
+                <p>Sub-Categor&iacute;a</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="<?php echo site_url("producto/list"); ?>" class="nav-link">
+                <i class="far fa-star nav-icon"></i>
+                <p>Productos</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+  
     </div>
     <!-- /.sidebar -->
   </aside>

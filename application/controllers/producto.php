@@ -18,6 +18,10 @@ class Producto extends CI_Controller{
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('precio','precio','required');
+        $this->form_validation->set_rules('descripcion','descripcion','required');
+        $this->form_validation->set_rules('codigo','codigo','required');
+        $this->form_validation->set_rules('titulo','titulo','required');
+        $this->form_validation->set_rules('subcategoria','subcategoria','required');
         if($this->form_validation->run())     
         {   
             $params = array(
@@ -28,7 +32,9 @@ class Producto extends CI_Controller{
                 'subcategoria_idsubcategoria' => $this->input->post('subcategoria'),
             );
             $this->Producto_model->add($params);
-            redirect('/');
+            redirect('producto/list');
+        }else{
+            //$data["error"]="todos los campos son requeridos";
         }
        
         $this->load->view("layouts/main",$data);
@@ -46,9 +52,35 @@ class Producto extends CI_Controller{
         $this->load->view("producto/_product_details_modal",$data);
     }
 
-    function edit()
+    function edit($idproducto)
     {
+        $data["producto"]=$this->Producto_model->get($idproducto);
         $data["view"]="producto/edit";
+        $data["js_to_load"]=["edit_producto.js"];
+        $data["idproducto"]=$idproducto;
+
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('precio','precio','required');
+        $this->form_validation->set_rules('descripcion','descripcion','required');
+        $this->form_validation->set_rules('codigo','codigo','required');
+        $this->form_validation->set_rules('titulo','titulo','required');
+        $this->form_validation->set_rules('subcategoria','subcategoria','required');
+
+        if($this->form_validation->run())     
+        {   
+            $params = array(
+                'codigo' => $this->input->post('codigo'),
+                'descripcion' => $this->input->post('descripcion'),
+                'precio' => $this->input->post('precio'),
+                'titulo' => $this->input->post('titulo'),
+            );
+            $this->Producto_model->update($idproducto,$params);
+            redirect('producto/list');
+        }else{
+            //$data["error"]="todos los campos son requeridos";
+        }
+
         $this->load->view("layouts/main",$data);
     }
     function remove()
@@ -57,7 +89,13 @@ class Producto extends CI_Controller{
     }
     function list()
     {
+        $data["productos"]=$this->Producto_model->list_path();
         $data["view"]="producto/list";
+
+        
+
+        
+
         $this->load->view("layouts/main",$data);
     }
 

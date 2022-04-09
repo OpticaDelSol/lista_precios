@@ -12,15 +12,26 @@ class SubCategoria_model extends CI_Model
         return $this->db->insert_id();
         
     }
-    function update($id,$params)
+    function edit($id,$params)
     {
-        $this->db->where('id',$id);
-        return $this->db->update('sbcategoria',$params);
+        $this->db->where('idsubcategoria',$id);
+        return $this->db->update('subcategoria',$params);
     }
     function remove()
     {
 
     }
+    
+    function get($id)
+    {
+        return $this->db->query("select * from subcategoria sc where sc.idsubcategoria = $id;")->row_array();
+    }
+
+    function list_path()
+    {
+        return $this->db->query("select c.nombre as 'nombre_categoria', sc.* from categoria c, subcategoria sc where sc.categoria_idcategoria = c.idcategoria;")->result_array();
+    }
+
     function list()
     {
         $this->db->order_by('nombre', 'asc');
