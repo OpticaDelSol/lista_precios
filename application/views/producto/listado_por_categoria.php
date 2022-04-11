@@ -53,11 +53,11 @@ foreach($productos as $p){
                 <tbody>
                     <?php } ?>
                     <tr >
-                    <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row"><?php echo $p["titulo"]  ?> &nbsp;&nbsp;
-                    <span class="badge bg-danger">-55%</span>
+                    <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row"><?php echo $p["codigo"]  ?> &nbsp;&nbsp;
+                    <!--span class="badge bg-danger">-55%</span-->
                     <span class="badge bg-success">Nuevo</span>
                 </td>
-                    <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">$&nbsp;<?php echo $p["precio"] ?></td>
+                    <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">$&nbsp;<?php echo number_format( $p["precio"],2 )?></td>
                     <td>
                         <a class="btn btn-xs btn-success producto-row" data-idprod="<?php echo $p["idproducto"] ?>" href="#"><i class="fa fa-info"></i></a>       
                         <!--a class="btn btn-xs btn-warning" href="">Editar</a-->       

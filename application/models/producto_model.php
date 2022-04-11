@@ -35,9 +35,11 @@ class Producto_model extends CI_Model
     {
         return $this->db->query("select p.titulo, p.descripcion from producto p where p.idproducto=$id;")->row_array();
     }
-    function list_por_categoria()
+    function list_por_categoria($filtro)
     {
-        return $this->db->query("select sc.categoria_idcategoria, p.subcategoria_idsubcategoria, p.*, sc.nombre as 'nombre_subcategoria', sc.descripcion from producto p, subcategoria sc where sc.idsubcategoria = p.subcategoria_idsubcategoria  order by sc.categoria_idcategoria, p.subcategoria_idsubcategoria;")->result_array();
+        $_filtro = (!isset($filtro) || $filtro=="")? "" : " and p.codigo like '%$filtro%' "; 
+  
+        return $this->db->query("select sc.categoria_idcategoria, p.subcategoria_idsubcategoria, p.*, sc.nombre as 'nombre_subcategoria', sc.descripcion from producto p, subcategoria sc where sc.idsubcategoria = p.subcategoria_idsubcategoria $_filtro and p.activo=1 order by sc.categoria_idcategoria, p.subcategoria_idsubcategoria;")->result_array();
     }
 
     function get($idproducto)

@@ -16,21 +16,28 @@
                     <?php }?>
                     <?php echo form_open('producto/edit/'.$idproducto); ?>
                         <div class="form-group">
-                            <label for="codigo-producto">C&oacute;digo</label>
-                            <input type="text" name="codigo" class="form-control" id="codigo-producto" placeholder="C&oacute;digo" value="<?php echo $producto["codigo"]; ?>">
+                            <label for="codigo-producto">Nombre</label>
+                            <input type="text" name="codigo" class="form-control" id="codigo-producto" placeholder="Nombre" value="<?php echo $producto["codigo"]; ?>">
                         </div>
                         <div class="form-group">
                             <label for="precio">Precio</label>
                             <input type="text" name="precio" class="form-control" id="precio" placeholder="Precio" value="<?php echo $producto["precio"]; ?>">
                         </div>
                         <div class="form-group">
-                            <label for="titulo">T&iacute;tulo</label>
-                            <input type="text" name="titulo" class="form-control" id="titulo" placeholder="T&iacute;tulo" value="<?php echo $producto["titulo"]; ?>">
+                            <label for="titulo">Decripci&oacute;n Corta</label>
+                            <input type="text" name="titulo" class="form-control" id="titulo" placeholder="" value="<?php echo $producto["titulo"]; ?>">
                         </div>
                         <div class="form-group">
                             <label for="summernote">Descripci&oacute;n</label>
                             <input type="hidden" name="descripcion" id="descripcion">
                             <div id="summernote"><?php echo $producto["descripcion"]; ?></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch3" name="activo" checked="true" value="activo">
+                                <label class="custom-control-label" for="customSwitch3">Activo</label>
+                            </div>
                         </div>
                         
                         <div class="form-group">

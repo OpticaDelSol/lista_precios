@@ -1,3 +1,15 @@
+<?php
+
+$CI=& get_instance();
+
+if(!$CI->session->userdata('user_name'))
+{
+    redirect('inicio/index');
+}
+
+$_user_name  = $CI->session->userdata('user_name'); 
+$_details = $CI->session->userdata('details'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

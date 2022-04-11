@@ -65,15 +65,21 @@ class Producto extends CI_Controller{
         $this->form_validation->set_rules('descripcion','descripcion','required');
         $this->form_validation->set_rules('codigo','codigo','required');
         $this->form_validation->set_rules('titulo','titulo','required');
-        $this->form_validation->set_rules('subcategoria','subcategoria','required');
+        //$this->form_validation->set_rules('subcategoria','subcategoria','required');
 
         if($this->form_validation->run())     
         {   
+            $activo = "0";
+            if(isset($_POST['activo']))
+            {
+                $activo = ($_POST['activo']=="activo") ? "1":"0";
+            }
             $params = array(
                 'codigo' => $this->input->post('codigo'),
                 'descripcion' => $this->input->post('descripcion'),
                 'precio' => $this->input->post('precio'),
                 'titulo' => $this->input->post('titulo'),
+                'activo' => $activo,
             );
             $this->Producto_model->update($idproducto,$params);
             redirect('producto/list');

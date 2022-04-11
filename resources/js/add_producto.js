@@ -7,16 +7,22 @@ $(document).ready(function() {
         $("form").submit();
     });
 
-    $("#categoria").change(()=>{
-        
-        let id = $("#categoria").children("option:selected").val();
+    function update_subcategoria()
+    {
+      let id = $("#categoria").children("option:selected").val();
 
-        $.ajax({
-            url: subcategorias_url + id,
-            context: document.body
-          }).done(function(data) {
-            $( "#subcategoria-container" ).html( data );
-          });
+      $.ajax({
+          url: subcategorias_url + id,
+          context: document.body
+        }).done(function(data) {
+          $( "#subcategoria-container" ).html( data );
+        });
+    }
+
+    $("#categoria").change(()=>{
+      update_subcategoria();
     });
+
+    update_subcategoria();
 
   });

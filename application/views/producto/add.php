@@ -16,21 +16,21 @@
                     <?php }?>
                     <?php echo form_open('producto/add/'); ?>
                         <div class="form-group">
-                            <label for="codigo-producto">C&oacute;digo</label>
-                            <input type="text" name="codigo" class="form-control" id="codigo-producto" placeholder="C&oacute;digo">
+                            <label for="codigo-producto">Nombre</label>
+                            <input type="text" name="codigo" class="form-control" id="codigo-producto" placeholder="Nombre">
                         </div>
                         <div class="form-group">
                             <label for="precio">Precio</label>
                             <input type="text" name="precio" class="form-control" id="precio" placeholder="Precio">
                         </div>
                         <div class="form-group">
-                            <label for="titulo">T&iacute;tulo</label>
-                            <input type="text" name="titulo" class="form-control" id="titulo" placeholder="T&iacute;tulo">
+                            <label for="titulo">Decripci&oacute;n Corta</label>
+                            <input type="text" name="titulo" class="form-control" id="Desc. Corta" placeholder="Desc. Corta">
                         </div>
                         <div class="form-group">
                             <label for="summernote">Descripci&oacute;n</label>
                             <input type="hidden" name="descripcion" id="descripcion">
-                            <div id="summernote">Sin descripci&oacute;n</div>
+                            <div id="summernote"></div>
                         </div>
                         <div class="form-group">
                             <label for="categoria">Categor&iacute;a</label>
