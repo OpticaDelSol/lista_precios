@@ -1,3 +1,13 @@
+<?php 
+
+$CI=& get_instance();
+
+if(!$CI->session->userdata('user_name'))
+{
+    redirect('inicio/index');
+}
+
+?>
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -14,7 +24,7 @@
           <img src="<?php echo site_url('resources/img/_optica_del_sol.png');?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Usuario</a>
+          <a href="#" class="d-block"><?php echo $CI->session->userdata('user_name'); ?></a>
         </div>
       </div>
 
@@ -41,7 +51,10 @@
           </li>
         </ul>
       </nav>
-      
+      <!--ADMIN-->
+      <?php 
+
+      if( trim($CI->session->userdata('permisos')) == trim("admin")){?>
         <div class="info">
             <a href="#" class="d-block">Admin</a>
         </div>
@@ -76,7 +89,7 @@
             </li>
           </ul>
         </nav>
-  
+        <?php }?>
     </div>
     <!-- /.sidebar -->
   </aside>

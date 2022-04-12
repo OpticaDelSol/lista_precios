@@ -20,10 +20,10 @@ class Inicio extends CI_Controller{
             if(isset($usuario['idusuario']))
             {
                 $newdata = array( 
-                    'id_usuario' => $usuario['id'],
+                    'id_usuario' => $usuario['idusuario'],
                     'user_name'  => $this->input->post('_usuario'),
                     'logged_in' => TRUE,
-                    'privileges' => $usuario['permisos'],
+                    'permisos' => $usuario['permisos'],
                     'details' => $usuario['nombre']
                  );  
 

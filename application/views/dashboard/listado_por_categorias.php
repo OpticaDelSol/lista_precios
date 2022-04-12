@@ -103,18 +103,18 @@
       </div>
   </div>
 </section>
-<section>
+<!--section>
 	<div class="row">
 		<div class="col-md-6">
 			<div class="card">
 				<div class="card-header"><h5 class="card-title">Chat</h5></div>
 				<div class="card-body">
-					<iframe width="550" height="350" scrolling="no" src="https://widget.mibbit.com/?settings=95beec67ba6f7b595ed40a2f70f610c6&server=irc.mibbit.net%3A%2B6697&channel=%23opticadelsol"></iframe>
-				</div>
+        <iframe src="https://thelounge.hybridirc.com/?join=opticadelsol" style="border:0; width:100%; height:500px;"></iframe>
+        </div>
 			</div>
 		</div>
 	</div>
-</section>
+</section-->
 <?php $this->load->view("common/big_modal"); ?>
 <script>
   var detalle_producto_url = "<?php echo site_url("producto/obtener_detalles_producto/") ?>";
