@@ -21,11 +21,11 @@
                         </div>
                         <div class="form-group">
                             <label for="precio">Precio</label>
-                            <input type="text" name="precio" class="form-control" id="precio" placeholder="Precio">
+                            <input type="number" name="precio" value="0" class="form-control" id="precio" placeholder="Precio">
                         </div>
                         <div class="form-group">
                             <label for="titulo">Decripci&oacute;n Corta</label>
-                            <input type="text" name="titulo" class="form-control" id="Desc. Corta" placeholder="Desc. Corta">
+                            <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Desc. Corta">
                         </div>
                         <div class="form-group">
                             <label for="summernote">Descripci&oacute;n</label>

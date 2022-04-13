@@ -21,7 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label for="precio">Precio</label>
-                            <input type="text" name="precio" class="form-control" id="precio" placeholder="Precio" value="<?php echo $producto["precio"]; ?>">
+                            <input type="number" name="precio" class="form-control" id="precio" placeholder="Precio" value="<?php echo $producto["precio"]; ?>">
                         </div>
                         <div class="form-group">
                             <label for="titulo">Decripci&oacute;n Corta</label>
@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" class="custom-control-input" id="customSwitch3" name="activo" checked="true" value="activo">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch3" name="activo" <?php  echo( ($producto["activo"] =="1" )? "checked='true'" : "") ?> value="activo">
                                 <label class="custom-control-label" for="customSwitch3">Activo</label>
                             </div>
                         </div>

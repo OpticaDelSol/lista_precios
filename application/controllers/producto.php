@@ -5,13 +5,13 @@ class Producto extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Producto_model');
-        $this->load->model('categoria_model');
-        $this->load->model('subCategoria_model');
+        $this->load->model('Categoria_model');
+        $this->load->model('SubCategoria_model');
     } 
 
     function add()
     {
-        $data["categorias"]=$this->categoria_model->list();
+        $data["categorias"]=$this->Categoria_model->list();
         $data["view"]="producto/add";
         $data["js_to_load"]=["add_producto.js"];
 
@@ -42,7 +42,7 @@ class Producto extends CI_Controller{
 
     function get_subcategoria_by_categoria($idcategoria)
     {
-        $data['subcategorias']=$this->subCategoria_model->list_for_category($idcategoria);
+        $data['subcategorias']=$this->SubCategoria_model->list_for_category($idcategoria);
         $this->load->view("producto/_subcategoria_select",$data);
     }
 
@@ -62,7 +62,7 @@ class Producto extends CI_Controller{
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('precio','precio','required');
-        $this->form_validation->set_rules('descripcion','descripcion','required');
+        //$this->form_validation->set_rules('descripcion','descripcion','required');
         $this->form_validation->set_rules('codigo','codigo','required');
         $this->form_validation->set_rules('titulo','titulo','required');
         //$this->form_validation->set_rules('subcategoria','subcategoria','required');

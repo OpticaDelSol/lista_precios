@@ -5,13 +5,13 @@ class SubCategoria extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('SubCategoria_model');
-        $this->load->model('categoria_model');
+        $this->load->model('Categoria_model');
     } 
 
     function add()
     {
         $data["view"]="subcategoria/add";
-        $data["categorias"]=$this->categoria_model->list();
+        $data["categorias"]=$this->Categoria_model->list();
 
         $this->load->library('form_validation');
 
@@ -25,7 +25,7 @@ class SubCategoria extends CI_Controller{
                 'categoria_idcategoria'=>$this->input->post('categoria'),
             );
             $this->SubCategoria_model->add($params);
-            redirect('subcategoria/list');
+            redirect('subCategoria/list');
         }else{
             //$data["error"]="todos los campos son requeridos";
         }
@@ -49,7 +49,7 @@ class SubCategoria extends CI_Controller{
                 'descripcion'=>$this->input->post('descripcion'),
             );
             $this->SubCategoria_model->edit($idsubcategoria, $params);
-            redirect('subcategoria/list');
+            redirect('subCategoria/list');
         }
         else{
             //$data["error"]="todos los campos son requeridos";

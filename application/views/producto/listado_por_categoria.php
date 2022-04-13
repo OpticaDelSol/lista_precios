@@ -55,7 +55,7 @@ foreach($productos as $p){
                     <tr >
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row"><?php echo $p["codigo"]  ?> &nbsp;&nbsp;
                     <!--span class="badge bg-danger">-55%</span-->
-                    <span class="badge bg-success">Nuevo</span>
+                    <!--span class="badge bg-success">Nuevo</span-->
                 </td>
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">$&nbsp;<?php echo number_format( $p["precio"],2 )?></td>
                     <td>
