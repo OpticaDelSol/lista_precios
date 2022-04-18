@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light bg-teal">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -15,18 +15,18 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search 
+      <!-- Navbar Search -->
       <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="fas fa-search"></i>
         </a>
         <div class="navbar-search-block">
-          <form class="form-inline">
+          <form class="form-inline" action="<?php echo site_url("dashboard/listado_cat"); ?>">
             <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control form-control-navbar" name="filtro" type="search" placeholder="Filtro" aria-label="Search">
               <div class="input-group-append">
                 <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
+                  <i class="fas fa-search"></i>&nbsp;B&uacute;scar
                 </button>
                 <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                   <i class="fas fa-times"></i>
@@ -36,7 +36,7 @@
           </form>
         </div>
       </li>
--->
+
       <!-- Messages Dropdown Menu -->
       
       <li class="nav-item">

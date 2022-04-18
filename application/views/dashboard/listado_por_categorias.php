@@ -20,7 +20,7 @@
 }
 </style>
 
-<section class="content">
+<!--section class="content">
   <div class="container-fluid">
       <h2 class="text-center display-4">B&uacute;squeda</h2>
     <div class="row">
@@ -38,7 +38,7 @@
       </div>
     </div>
   </div>
-</section>
+</section-->
 
 <section class="content-header">
   <div class="container-fluid">

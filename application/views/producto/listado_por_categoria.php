@@ -30,7 +30,6 @@ foreach($productos as $p){
         
         $prev_subcat = $p["subcategoria_idsubcategoria"];
     ?>
-    
     <div class="col-md-6">
     <div class="card">
         <div class="card-header">
@@ -45,9 +44,9 @@ foreach($productos as $p){
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th></th>
+                        <th class="bg-lime">Producto</th>
+                        <th class="bg-lime">Precio</th>
+                        <!--th class="bg-lime"></th-->
                     </tr>
                 </thead>
                 <tbody>
@@ -58,10 +57,10 @@ foreach($productos as $p){
                     <!--span class="badge bg-success">Nuevo</span-->
                 </td>
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">$&nbsp;<?php echo number_format( $p["precio"],2 )?></td>
-                    <td>
+                    <!--td>
                         <a class="btn btn-xs btn-success producto-row" data-idprod="<?php echo $p["idproducto"] ?>" href="#"><i class="fa fa-info"></i></a>       
-                        <!--a class="btn btn-xs btn-warning" href="">Editar</a-->       
-                    </td>
+                               
+                    </td-->
     </tr>
 
 <?php }

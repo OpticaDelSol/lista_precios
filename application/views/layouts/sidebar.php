@@ -9,7 +9,7 @@ if(!$CI->session->userdata('user_name'))
 
 ?>
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4 bg-navy">
     <!-- Brand Logo -->
     <a href="<?php echo site_url("dashboard/listado_cat"); ?>" class="brand-link">
       <img src="<?php echo site_url('resources/img/_optica_del_sol.png');?>" alt=Sol" class="brand-image img-circle elevation-3" style="opacity: .8">
