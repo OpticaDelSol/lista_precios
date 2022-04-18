@@ -4,14 +4,15 @@ $prev_subcat = null;
 foreach($productos as $p){ 
     if($prev_subcat!=$p["subcategoria_idsubcategoria"] || $prev_cat!=$p["categoria_idcategoria"]){
 
-        if($prev_subcat!=null){//cierre de card anterior, si existe
+        if($prev_subcat!=null && $prev_subcat!=$p["subcategoria_idsubcategoria"]){//cierre de card anterior, si existe
             ?>
                     </tbody>
                 </table>
-                </div>
-            </div>
-            </div>
-        </div>
+                </div><!-- col md 12 -->
+            </div><!-- card body -->
+            </div><!-- card-->
+            </div><!-- col md 6-->
+        
         <?php
         }
         if($prev_cat!=$p["categoria_idcategoria"]){//cambio de categoria o primera vez
@@ -22,21 +23,19 @@ foreach($productos as $p){
             <?php } ?>
 
                 <div class="tab-pane fade <?php echo ($p['categoria_idcategoria'] == $cur_cat_id? 'active show' : ''); ?>" id="vert-tabs-right-<?php echo $p["categoria_idcategoria"] ?>" role="tabpanel" aria-labelledby="vert-tabs-right-<?php echo $p["categoria_idcategoria"] ?>-tab">
-                <div class="row">
+                <div class="row" style="display:flex;">
             <?php
             $prev_cat = $p["categoria_idcategoria"];
         }
 
         
-        $prev_subcat = $p["subcategoria_idsubcategoria"];
+        
+        if($prev_subcat!=$p["subcategoria_idsubcategoria"]){
     ?>
     <div class="col-md-6">
-    <div class="card">
+    <div class="card" >
         <div class="card-header">
             <h3 class="card-title"><?php echo $p["nombre_subcategoria"] ?></h3>
-            <div class="card-tools">
-                
-            </div>
         </div>
         
         <div class="card-body">
@@ -50,17 +49,16 @@ foreach($productos as $p){
                     </tr>
                 </thead>
                 <tbody>
-                    <?php } ?>
+                    <?php 
+                    $prev_subcat = $p["subcategoria_idsubcategoria"];
+                } 
+
+            }
+                ?>
                     <tr >
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row"><?php echo $p["codigo"]  ?> &nbsp;&nbsp;
-                    <!--span class="badge bg-danger">-55%</span-->
-                    <!--span class="badge bg-success">Nuevo</span-->
                 </td>
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">$&nbsp;<?php echo number_format( $p["precio"],2 )?></td>
-                    <!--td>
-                        <a class="btn btn-xs btn-success producto-row" data-idprod="<?php echo $p["idproducto"] ?>" href="#"><i class="fa fa-info"></i></a>       
-                               
-                    </td-->
     </tr>
 
 <?php }
@@ -69,10 +67,10 @@ if($prev_subcat!=null)
     ?>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </div>
-            </div>
+                    </div><!-- col md 12 -->
+            </div><!-- card body -->
+            </div><!-- card-->
+            </div><!-- col md 6-->
     </div>
     </div><!-- end of tab -->
     <?php
