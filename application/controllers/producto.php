@@ -66,7 +66,7 @@ class Producto extends CI_Controller{
         $this->form_validation->set_rules('codigo','codigo','required');
         $this->form_validation->set_rules('titulo','titulo','required');
         //$this->form_validation->set_rules('subcategoria','subcategoria','required');
-
+        $old_price = $data["producto"]["precio"];
         if($this->form_validation->run())     
         {   
             $activo = "0";
@@ -82,6 +82,13 @@ class Producto extends CI_Controller{
                 'activo' => $activo,
             );
             $this->Producto_model->update($idproducto,$params);
+
+            if(floatval($old_price) != floatval($this->input->post('precio')))
+            {
+                $this->Producto_model->registrar_cambio_precio($idproducto,floatval($old_price), floatval($this->input->post('precio')));
+            }
+
+
             redirect('producto/list');
         }else{
             //$data["error"]="todos los campos son requeridos";

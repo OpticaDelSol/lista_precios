@@ -89,6 +89,16 @@ if(!$CI->session->userdata('user_name'))
             </li>
           </ul>
         </nav>
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="<?php echo site_url("producto/list"); ?>" class="nav-link">
+                <i class="far fa-star nav-icon"></i>
+                <p>Historial Precios</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
         <?php }?>
     </div>
     <!-- /.sidebar -->

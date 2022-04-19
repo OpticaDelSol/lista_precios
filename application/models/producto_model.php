@@ -52,4 +52,9 @@ class Producto_model extends CI_Model
         return $this->db->query("select date_format(p.fecha_modif,'%d/%m/%Y') as 'ultima_modif' from producto p order by p.fecha_modif desc limit 1;")->row_array();
     }
 
+    function registrar_cambio_precio($idproducto,$precio_ant, $precio_nuevo)
+    {
+        $this->db->query("INSERT INTO `modificacion` (`fk_producto`, `valor_anterior`, `valor_nuevo`) VALUES ($idproducto, $precio_ant, $precio_nuevo);");
+    }
+
 }

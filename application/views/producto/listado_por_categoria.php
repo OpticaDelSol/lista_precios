@@ -23,7 +23,7 @@ foreach($productos as $p){
             <?php } ?>
 
                 <div class="tab-pane fade <?php echo ($p['categoria_idcategoria'] == $cur_cat_id? 'active show' : ''); ?>" id="vert-tabs-right-<?php echo $p["categoria_idcategoria"] ?>" role="tabpanel" aria-labelledby="vert-tabs-right-<?php echo $p["categoria_idcategoria"] ?>-tab">
-                <div class="row" style="display:flex;">
+                <div class="row" >
             <?php
             $prev_cat = $p["categoria_idcategoria"];
         }
@@ -40,12 +40,12 @@ foreach($productos as $p){
         
         <div class="card-body">
             <div class="col-md-12">
-            <table class="table table-bordered">
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="bg-lime">Producto</th>
-                        <th class="bg-lime">Precio</th>
-                        <!--th class="bg-lime"></th-->
+                        <th class="bg-teal">Producto</th>
+                        <th class="bg-teal">Precio</th>
+                        <th class="bg-teal"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,6 +59,11 @@ foreach($productos as $p){
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row"><?php echo $p["codigo"]  ?> &nbsp;&nbsp;
                 </td>
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">$&nbsp;<?php echo number_format( $p["precio"],2 )?></td>
+                    <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">
+                    <span data-idprod="<?php echo $p["idproducto"] ?>" class="btn btn-success btn-sm producto-inf-btn"><i data-idprod="<?php echo $p["idproducto"] ?>" class="fa fa-info "></i></span>
+                    <span data-idprod="<?php echo $p["idproducto"] ?>" class="btn btn-primary btn-sm producto-inf-btn"><i data-idprod="<?php echo $p["idproducto"] ?>" class="fa fa-solid fa-clock "></i></span>
+                    <span data-idprod="<?php echo $p["idproducto"] ?>" class="btn btn-warning btn-sm producto-inf-btn"><i data-idprod="<?php echo $p["idproducto"] ?>" class="fas fa-edit "></i></span>
+                    </td>
     </tr>
 
 <?php }

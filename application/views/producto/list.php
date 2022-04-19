@@ -1,6 +1,6 @@
 <div class="flexible-content">
 <div class="row">
-<div class="col-6">
+<div class="col-md-12">
 <div class="card">
 <div class="card-header">
 <h3 class="card-title">Productos</h3>
@@ -19,7 +19,7 @@
 </div>
 
 
-<div class="card-body table-responsive p-0" style="height: 300px;">
+<div class="card-body table-responsive p-0" style="height: 600px;">
     <table class="table table-head-fixed text-nowrap">
         <thead>
             <tr>
@@ -37,7 +37,12 @@
                 <td><?php echo $p["codigo"]; ?></td>
                 <td style="text-align:right;">$&nbsp;   <?php echo number_format($p["precio"],2); ?></td>
                 <td style="text-align:center;"><span class="badge <?php echo ($p["activo"]=="1") ? "bg-success" : "bg-danger"  ?>"><?php echo ($p["activo"]=="1" ? "S&iacute;":"No"); ?></span></td>
-                <td><a class="btn btn-warning btn-xs" href="<?php echo site_url("producto/edit/".$p["idproducto"]); ?>">Editar</a></td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="<?php echo site_url("producto/edit/".$p["idproducto"]); ?>"><i class="fas fa-edit "></i></a>
+                    <span data-idprod="<?php echo $p["idproducto"] ?>" class="btn btn-primary btn-sm producto-inf-btn"><i data-idprod="<?php echo $p["idproducto"] ?>" class="fa fa-solid fa-clock "></i></span>
+                    
+                </td>
+                
             </tr>
         <?php } ?>
         </tbody>
