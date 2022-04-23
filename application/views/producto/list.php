@@ -39,7 +39,7 @@
                 <td style="text-align:center;"><span class="badge <?php echo ($p["activo"]=="1") ? "bg-success" : "bg-danger"  ?>"><?php echo ($p["activo"]=="1" ? "S&iacute;":"No"); ?></span></td>
                 <td>
                     <a class="btn btn-warning btn-sm" href="<?php echo site_url("producto/edit/".$p["idproducto"]); ?>"><i class="fas fa-edit "></i></a>
-                    <span data-idprod="<?php echo $p["idproducto"] ?>" class="btn btn-primary btn-sm producto-inf-btn"><i data-idprod="<?php echo $p["idproducto"] ?>" class="fa fa-solid fa-clock "></i></span>
+                    <a class="btn btn-primary btn-sm producto-inf-btn" href="<?php echo site_url("historialCambios/list_prod/".$p["idproducto"]); ?>"><i class="fa fa-solid fa-clock "></i></a>
                     
                 </td>
                 
