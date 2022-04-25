@@ -112,5 +112,16 @@ class Producto extends CI_Controller{
         $this->load->view("layouts/main",$data);
     }
 
+    function modificar_por_categoria()
+    {
+        $idCategoria = $this->input->post('idcategoria');
+        /*
+insert into modificacion (fk_producto, valor_anterior, valor_nuevo) values (
+select p.idproducto as 'fk_producto', 0 as 'valor_anterior', p.precio as 'valor_nuevo' from producto p, subcategoria sc 
+where p.subcategoria_idsubcategoria = sc.idsubcategoria and
+sc.categoria_idcategoria = 0);
+        */
+    }
+
 
 }
