@@ -60,7 +60,7 @@ foreach($productos as $p){
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row"><?php echo $p["codigo"]  ?> &nbsp;&nbsp;
                 </td>
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">$&nbsp;<?php echo number_format( $p["precio"],2 )?></td>
-                    <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">
+                    <td data-idprod="<?php echo $p["idproducto"] ?>"  style="text-align:right;">
                     <span data-idprod="<?php echo $p["idproducto"] ?>" class="btn btn-success btn-sm producto-inf-btn"><i data-idprod="<?php echo $p["idproducto"] ?>" class="fa fa-info "></i></span>
                     <?php if( trim($CI->session->userdata('permisos')) == trim("admin")){?>
                     <a class="btn btn-primary btn-sm producto-inf-btn" href="<?php echo site_url("historialCambios/list_prod/".$p["idproducto"]); ?>"><i class="fa fa-solid fa-clock "></i></a>
