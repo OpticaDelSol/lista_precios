@@ -33,7 +33,7 @@ foreach($productos as $p){
         
         if($prev_subcat!=$p["subcategoria_idsubcategoria"]){
     ?>
-    <div class="col-md-6">
+    <div class="col-md-12">
     <div class="card" >
         <div class="card-header">
             <h3 class="card-title"><?php echo $p["nombre_subcategoria"] ?></h3>
@@ -45,8 +45,8 @@ foreach($productos as $p){
                 <thead>
                     <tr>
                         <th class="bg-teal">Producto</th>
-                        <th class="bg-teal">Precio</th>
-                        <th class="bg-teal"></th>
+                        <th class="bg-teal" style="text-align:right;">Precio</th>
+                        <th class="bg-teal" style="width: 9em;"></th>
                     </tr>
                 </thead>
                 <tbody>

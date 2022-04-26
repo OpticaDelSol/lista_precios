@@ -1,5 +1,5 @@
 
-<footer class="main-footer">
+<footer class="main-footer  text-sm">
     <strong>2022 <a href="">&Oacute;ptica del Sol</a>.</strong>
    
     <div class="float-right d-none d-sm-inline-block">

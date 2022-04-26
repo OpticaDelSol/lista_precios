@@ -15,7 +15,7 @@ class Dashboard  extends CI_Controller{
         $this->load->view('layouts/main',$data);
     }*/
 
-    function listado_cat()
+    function listado_cat($cat_to_show=null)
     {
         $filtro = isset($_GET["filtro"]) ? $_GET["filtro"] : "";
         //$_filtro = $filtro;
@@ -56,6 +56,11 @@ class Dashboard  extends CI_Controller{
         $data["cur_cat_id"]="1";
         if(count($data["productos"])>0){
             $data["cur_cat_id"]=$data["productos"][0]["categoria_idcategoria"];
+        }
+
+        if(isset($cat_to_show))
+        {
+            $data["cur_cat_id"]=$cat_to_show;
         }
        
         $data["js_to_load"]=["dashboard.js"];

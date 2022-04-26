@@ -37,7 +37,7 @@ $_details = $CI->session->userdata('details');
   * sidebar-collapse
   * sidebar-mini
 -->
-<body class="hold-transition sidebar-mini ">
+<body class="hold-transition sidebar-mini text-sm layout-navbar-fixed layout-fixed" style="height: auto;">
 <div class="wrapper">
   
 

@@ -18,27 +18,15 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+@media only screen and (max-width: 600px) {
+  #sidebar-categorias
+  {
+    display: none;
+  }
+}
 </style>
 
-<!--section class="content">
-  <div class="container-fluid">
-      <h2 class="text-center display-4">B&uacute;squeda</h2>
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <form action="<?php echo site_url("dashboard/listado_cat"); ?>">
-          <div class="input-group">
-            <input type="search" class="form-control form-control-lg" placeholder="Valor de b&uacute;squeda" name="filtro">
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-lg btn-default">
-                <i class="fa fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section-->
+
 
 <section class="content-header">
   <div class="container-fluid">
@@ -75,14 +63,14 @@
   </div>
       <div class='row'>
       
-    <div class="col-7 col-sm-9">
+    <div class="col-12 col-7 col-sm-9">
 
       <div class="tab-content" id="vert-tabs-right-tabContent">
         <?php $this->load->view("producto/listado_por_categoria",['productos'=>$productos,'cur_cat_id'=>$cur_cat_id]); ?>
       </div>
 
     </div>
-    <div class="col-5 col-sm-3">
+    <div class="col-5 col-sm-3" id="sidebar-categorias">
      
       <div class="callout callout-info">
       <h5> Categor&iacute;as</h5>
