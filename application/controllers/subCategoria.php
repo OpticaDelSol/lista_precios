@@ -69,5 +69,23 @@ class SubCategoria extends CI_Controller{
         $this->load->view("layouts/main",$data);
     }
 
+    function modify_price_p(){
+        $data["js_to_load"]=["modif_precio_grupo.js"];
+        $data["rows"]=$this->Categoria_model->list();
+        $data["view"]="subcategoria/modif_price_p";
+        $this->load->view("layouts/main",$data);
+    }
+
+    function modify_price(){
+        #$data["js_to_load"]=["modif_precio_grupo.js"];
+        $data["rows"]=$this->Categoria_model->list();
+        $data["view"]="subcategoria/modif_price";
+        $this->load->view("layouts/main",$data);
+    }
+
+    function getforcatid($id){
+        $data["rows"]=$this->SubCategoria_model->list_for_category($id);
+        $this->load->view("subcategoria/_select_subgrupo",$data);
+    }
 
 }

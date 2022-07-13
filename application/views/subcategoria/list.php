@@ -13,7 +13,7 @@
                 </button>
                 -->
 
-                <a href="<?php echo site_url("subcategoria/add"); ?>" class="btn btn-sm btn-success">Nuevo</a>
+                <a href="<?php echo site_url("subCategoria/add"); ?>" class="btn btn-sm btn-success">Nuevo</a>
                 </div>
             </div>
             <div class="card-body table-responsive p-0" style="height: 300px;">

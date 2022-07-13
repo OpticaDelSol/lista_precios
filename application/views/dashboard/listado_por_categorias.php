@@ -58,9 +58,9 @@
 
 <section class='content'>
   <div class='container-fluid'>
-  <div class="callout callout-info">
+  <!--div class="callout callout-info">
       <h5 class="mb-2">Lista de precios al <?php echo $ultima_modif["ultima_modif"] ?></h5>
-  </div>
+  </div-->
       <div class='row'>
       
     <div class="col-12 col-7 col-sm-9">

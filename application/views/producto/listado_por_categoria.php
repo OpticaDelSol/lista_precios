@@ -2,6 +2,15 @@
 $CI=& get_instance();
 $prev_cat = null;
 $prev_subcat = null;
+?>
+
+<style>
+td{
+    padding: 0.25em !important;    
+}
+</style>
+
+<?php
 foreach($productos as $p){ 
     if($prev_subcat!=$p["subcategoria_idsubcategoria"] || $prev_cat!=$p["categoria_idcategoria"]){
 
@@ -33,7 +42,7 @@ foreach($productos as $p){
         
         if($prev_subcat!=$p["subcategoria_idsubcategoria"]){
     ?>
-    <div class="col-md-12">
+    <div class="col-md-6">
     <div class="card" >
         <div class="card-header">
             <h3 class="card-title"><?php echo $p["nombre_subcategoria"] ?></h3>
@@ -44,9 +53,9 @@ foreach($productos as $p){
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="bg-teal">Producto</th>
-                        <th class="bg-teal" style="text-align:right;">Precio</th>
-                        <th class="bg-teal" style="width: 9em;"></th>
+                        <th class="bg-teal" style="padding: 0.15em;">Producto</th>
+                        <th class="bg-teal" style="text-align:right; padding: 0.15em;">Precio</th>
+                        <th class="bg-teal" style="width: 6em; padding: 0.15em;"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,11 +70,11 @@ foreach($productos as $p){
                 </td>
                     <td data-idprod="<?php echo $p["idproducto"] ?>" class="producto-row" style="text-align:right;">$&nbsp;<?php echo number_format( $p["precio"],2 )?></td>
                     <td data-idprod="<?php echo $p["idproducto"] ?>"  style="text-align:right;">
-                    <span data-idprod="<?php echo $p["idproducto"] ?>" class="btn btn-success btn-sm producto-inf-btn"><i data-idprod="<?php echo $p["idproducto"] ?>" class="fa fa-info "></i></span>
+                    <span data-idprod="<?php echo $p["idproducto"] ?>" class="btn btn-success btn-xs producto-inf-btn"><i data-idprod="<?php echo $p["idproducto"] ?>" class="fa fa-info "></i></span>
                     <?php if( trim($CI->session->userdata('permisos')) == trim("admin")){?>
-                    <a class="btn btn-primary btn-sm producto-inf-btn" href="<?php echo site_url("historialCambios/list_prod/".$p["idproducto"]); ?>"><i class="fa fa-solid fa-clock "></i></a>
+                    <a class="btn btn-primary btn-xs producto-inf-btn" href="<?php echo site_url("historialCambios/list_prod/".$p["idproducto"]); ?>"><i class="fa fa-solid fa-clock "></i></a>
                     
-                    <a class="btn btn-warning btn-sm" href="<?php echo site_url("producto/edit/".$p["idproducto"]); ?>"><i class="fas fa-edit "></i></a>
+                    <a class="btn btn-warning btn-xs" href="<?php echo site_url("producto/edit/".$p["idproducto"]); ?>"><i class="fas fa-edit "></i></a>
                     <?php } ?>
                     </td>
     </tr>
