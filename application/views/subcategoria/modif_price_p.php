@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <label for="porcentaje">Porcentaje:</label>
                     <div class="input-group-append">
-                        <input type="number" step="0.01" min="-99999" max="99999" id="porcentaje" class="form-control" value="0.01">
+                        <input type="number" step="0.01" min="-99999" max="99999" id="porcentaje" class="form-control" value="0.01" name="porcentaje">
                         <div class="input-group-append">
                             <span class="input-group-text">%</span>
                         </div>

@@ -70,9 +70,23 @@ class SubCategoria extends CI_Controller{
     }
 
     function modify_price_p(){
+        
         $data["js_to_load"]=["modif_precio_grupo.js"];
         $data["rows"]=$this->Categoria_model->list();
         $data["view"]="subcategoria/modif_price_p";
+        
+        //form
+        $this->form_validation->set_rules('porcentaje','porcentaje','required');
+
+        if($this->form_validation->run())
+        {
+            $params=array(
+                'precio'=>$this->input->post("porcentaje")
+            );
+            $this->SubCategoria_model->add($params);
+            redirect('subCategoria/list');
+        }
+        
         $this->load->view("layouts/main",$data);
     }
 
