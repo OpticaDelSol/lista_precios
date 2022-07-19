@@ -8,12 +8,13 @@
 
         </div>
         <div class="card-body">
-            <div class="col-md-12">
+            <!--div class="col-md-12">
                 <ol class="breadcrumb ">
-                    <li class="breadcrumb-item">Categoria</li>
+                    <li class="breadcrumb-item">Categor&iacute;a</li>
                     <li class="breadcrumb-item active">Subcat</li>
                 </ol>
-            </div>
+            </div-->
+            <?php echo form_open('subCategoria/modify_price_p/'); ?>
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="categoria">Categor&iacute;a</label>
@@ -66,10 +67,11 @@
                 <div class="form-group">
                     <input type="submit" class="form-control btn btn-info" value="Modificar" id="btn-submit">
                 </div>
+                <?php  echo form_close();  ?>
             </div>
         </div>
         <div class="card-footer">
-                <button class="btn btn-danger">Cancelar</button>
+                <a href="<?php echo site_url("/") ?>" class="btn btn-danger">Cancelar</a>
         </div>
     </div>
 </div>

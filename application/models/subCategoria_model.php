@@ -43,4 +43,9 @@ class SubCategoria_model extends CI_Model
         return $this->db->get('subcategoria')->result_array();
     }
 
+    function modify_subgroup_prices($idsg, $ratio)
+    {
+        //get from db and then update
+    }
+
 }

@@ -59,4 +59,8 @@ class Producto_model extends CI_Model
         $this->db->query("INSERT INTO `modificacion` (`fk_producto`, `valor_anterior`, `valor_nuevo`) VALUES ($idproducto, $precio_ant, $precio_nuevo);");
     }
 
+    function listado_por_subcategoria($idscat){
+        return $this->db->query("select * from producto p where p.subcategoria_idsubcategoria=$idscat;")->result_array();
+    }
+
 }
