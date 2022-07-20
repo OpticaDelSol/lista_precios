@@ -90,6 +90,9 @@ class SubCategoria extends CI_Controller{
                 3.save product
             */
             $idscat = $this->input->post("subcategoria");
+
+            $idref = $this->SubCategoria_model->registrar_cambio_porcentaje($idscat,$this->input->post("porcentaje"));
+
             $products = $this->Producto_model->listado_por_subcategoria($idscat);
             foreach($products as $product)
             {
@@ -99,7 +102,8 @@ class SubCategoria extends CI_Controller{
                 $this->Producto_model->registrar_cambio_precio(
                     $product["idproducto"],
                     $product["precio"],
-                    $n_precio
+                    $n_precio,
+                    $idref
                 );
 
                 $params=[

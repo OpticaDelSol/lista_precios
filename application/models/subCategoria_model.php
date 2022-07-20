@@ -43,9 +43,10 @@ class SubCategoria_model extends CI_Model
         return $this->db->get('subcategoria')->result_array();
     }
 
-    function modify_subgroup_prices($idsg, $ratio)
+    function registrar_cambio_porcentaje($idsc,$porcentaje)
     {
-        //get from db and then update
+        $this->db->query("INSERT INTO `modificacion` (`fk_subcat`, `porcentaje`, `tipo`) VALUES ($idsc, $porcentaje,'SCAT');");
+        return $this->db->insert_id();
     }
 
 }

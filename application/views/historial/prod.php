@@ -16,6 +16,7 @@
                                     <th class="bg-warning" >Fecha</th>
                                     <th class="bg-warning"  style="text-align: right;">Precio Anterior</th>
                                     <th class="bg-warning"  style="text-align: right;">Precio Nuevo</th>
+                                    <th class="bg-warning"  style="text-align: right;">Cambio Grupo</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,6 +25,14 @@
                                         <td><b><?php echo $c["fecha"]; ?></b></td>
                                         <td style="text-align: right;">$&nbsp;<?php echo $c["valor_anterior"]; ?></td>
                                         <td style="text-align: right;">$&nbsp;<b><?php echo $c["valor_nuevo"]; ?></b></td>
+                                        <td style="text-align: right;">&nbsp;<b><?php 
+                                        if($c["porcentaje"]!=""){
+                                            echo (floatval($c["valor_nuevo"])>floatval($c["valor_anterior"])?"+":""). $c["porcentaje"]."%"; 
+                                        }
+                                        else{
+                                            echo "-";
+                                        }
+                                        ?></b></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

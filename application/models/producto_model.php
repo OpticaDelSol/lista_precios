@@ -54,9 +54,9 @@ class Producto_model extends CI_Model
 
     
 
-    function registrar_cambio_precio($idproducto,$precio_ant, $precio_nuevo)
+    function registrar_cambio_precio($idproducto,$precio_ant, $precio_nuevo,$idref=null)
     {
-        $this->db->query("INSERT INTO `modificacion` (`fk_producto`, `valor_anterior`, `valor_nuevo`) VALUES ($idproducto, $precio_ant, $precio_nuevo);");
+        $this->db->query("INSERT INTO `modificacion` (`fk_producto`, `valor_anterior`, `valor_nuevo`, `refid`) VALUES ($idproducto, $precio_ant, $precio_nuevo, $idref);");
     }
 
     function listado_por_subcategoria($idscat){
