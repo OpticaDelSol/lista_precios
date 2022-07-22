@@ -33,7 +33,7 @@ class Producto_model extends CI_Model
 
     function get_detalle_producto($id)
     {
-        return $this->db->query("select p.titulo, p.descripcion from producto p where p.idproducto=$id;")->row_array();
+        return $this->db->query("select p.codigo, p.titulo, p.descripcion from producto p where p.idproducto=$id;")->row_array();
     }
     function list_por_categoria($filtro)
     {
@@ -56,7 +56,7 @@ class Producto_model extends CI_Model
 
     function registrar_cambio_precio($idproducto,$precio_ant, $precio_nuevo,$idref=null)
     {
-        $this->db->query("INSERT INTO `modificacion` (`fk_producto`, `valor_anterior`, `valor_nuevo`, `refid`) VALUES ($idproducto, $precio_ant, $precio_nuevo, $idref);");
+        $this->db->query("INSERT INTO `modificacion` (`fk_producto`, `valor_anterior`, `valor_nuevo`, `refid`) VALUES ($idproducto, $precio_ant, $precio_nuevo, '$idref');");
     }
 
     function listado_por_subcategoria($idscat){

@@ -75,3 +75,6 @@
         </div>
     </div>
 </div>
+<script>
+    var _url="<?php echo site_url("subCategoria/getforcatid") ?>";
+</script>

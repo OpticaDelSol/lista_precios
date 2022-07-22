@@ -49,7 +49,7 @@ $("#categoria").change(()=>{
         return
     }
     $.ajax({
-        url: "http://localhost/price_list/codeigniter/subCategoria/getforcatid/"+opt,
+        url: _url + "/"+opt,
         success: (data)=>{
             $("#grupo-container").html(data)
 
