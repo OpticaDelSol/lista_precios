@@ -65,19 +65,19 @@
 
 body{
     background-color: rgba(0,123,255,1) !important;
-    /*background-image: url('<?php echo site_url("resources/img/bg.png") ?>');
+    background-image: url('<?php echo site_url("resources/img/bg.png") ?>');
     -webkit-animation: bg-scrolling-reverse 0.92s infinite;
-
+    /* Safari 4+ */
     -moz-animation: bg-scrolling-reverse 0.92s infinite;
-
+    /* Fx 5+ */
     -o-animation: bg-scrolling-reverse 0.92s infinite;
-
+    /* Opera 12+ */
     animation: bg-scrolling-reverse 0.92s infinite;
-
+    /* IE 10+ */
     -webkit-animation-timing-function: linear;
     -moz-animation-timing-function: linear;
     -o-animation-timing-function: linear;
-    animation-timing-function: linear;*/
+    animation-timing-function: linear;
 }
 </style>
 </head>
@@ -86,7 +86,7 @@ body{
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="" class="h1"><b></a>
+      <a href="" class="h1"><b>Optica del Sol</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Iniciar Sesi&oacute;n</p>
