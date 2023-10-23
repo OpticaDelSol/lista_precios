@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	//'hostname' => 'ls-f86e63702de2fb38a6c50d7cbdc1bc1b8b19fdb4.cbiz2abbth9q.ca-central-1.rds.amazonaws.com',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	//'password' => 'c!Z*q]xlj9hI.0vgcj9GC4G6{VZi>jG[',
+	'hostname' => 'ls-f86e63702de2fb38a6c50d7cbdc1bc1b8b19fdb4.cbiz2abbth9q.ca-central-1.rds.amazonaws.com',
+	//'hostname' => 'localhost',
+	'username' => 'dbmasteruser',
+	//'password' => 'root',
+	'password' => 'c!Z*q]xlj9hI.0vgcj9GC4G6{VZi>jG[',
 	'database' => 'pricelist',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
