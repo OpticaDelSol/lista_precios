@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:88/';
+$config['base_url'] = 'http://18.209.96.180/v2/lista_precios/';
 //$config['base_url'] = 'http://localhost/price_list/codeigniter/';
 
 /*
