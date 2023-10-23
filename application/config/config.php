@@ -24,7 +24,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://18.209.96.180/v2/lista_precios/';
-//$config['base_url'] = 'http://localhost/price_list/codeigniter/';
 
 /*
 |--------------------------------------------------------------------------
